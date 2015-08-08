@@ -16,6 +16,7 @@
 //= require jquery.serializeJSON
 //= require underscore
 //= require backbone
+//= require_tree ./utils
 //= require marked
 //= require trello
 //= require_tree ../templates

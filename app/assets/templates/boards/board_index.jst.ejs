@@ -1,0 +1,4 @@
+<h3>Boards</h3>
+<% boards.each(function(board) { %>
+  <a href="<%= "/#boards/" + board.id %>"><%= board.escape('title') %></a>
+<% }); %>

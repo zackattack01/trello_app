@@ -4,10 +4,14 @@ window.Trello = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    var boards = new Trello.Collections.Boards();
+    boards.fetch();
+    var $boards = $('#boards-index');
+    var boardsView = new Trello.Views.BoardIndex({ collection: boards });
+    $boards.html(boardsView.render().$el);
+    $rootEl = $('#content-main');
+
+    new Trello.Routers.BoardRouter(boards, $rootEl);
+    Backbone.history.start();
   }
 };
-
-$(document).ready(function(){
-  Trello.initialize();
-});
