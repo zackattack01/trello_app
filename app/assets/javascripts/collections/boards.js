@@ -8,7 +8,7 @@ Trello.Collections.Boards = Backbone.Collection.extend({
     if (!board) {
       board = new Trello.Models.Board({ id: id });
       board.fetch({
-        success: function(resp) {
+        success: function() {
           that.add(board);  
         }
       });

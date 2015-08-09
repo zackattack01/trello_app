@@ -27,9 +27,14 @@ body {
   border-right: thin solid #337ab7; 
 }
 
+.clearfix {
+  content: "";
+  clear: both;
+}
+
 #content-main {
-  width: 70%;
-  margin: 0 auto;
+  width: 80%;
+  margin-left: 15%;
 }
 
 .list-item {
@@ -39,6 +44,7 @@ body {
   border: thin solid black;
   cursor: pointer;
   border-radius: 5px;
+  max-width: 20%;
 }
 
 .auth {

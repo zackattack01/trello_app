@@ -7,3 +7,7 @@ User.create({ username: 'admin', password: 'password' })
   end
 end
 
+list = User.first.boards.first.lists.first
+3.times do |i|
+  Card.create({ title: "I'm card item #{i + 1}", list_id: list.id, ord: i, description: "something something card #{i + 1} something lorem ipsum something"})
+end

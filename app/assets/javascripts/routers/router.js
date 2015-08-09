@@ -5,13 +5,18 @@ Trello.Routers.BoardRouter = Backbone.Router.extend({
   },
 
   routes: {
-    'boards/:id': 'show'
+    'boards/:id': 'show',
+    'cards/:id/items': 'indexItems'
   },
 
   show: function(id) {
     var board = this.boards.getOrFetch(id);
     var view = new Trello.Views.Board({ model: board, collection: this.boards });
     this._swapView(view);
+  },
+
+  indexItems: function() {
+    ////TODODODOD
   },
 
   _swapView: function(view) {
