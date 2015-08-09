@@ -9,5 +9,9 @@ end
 
 list = User.first.boards.first.lists.first
 3.times do |i|
-  Card.create({ title: "I'm card item #{i + 1}", list_id: list.id, ord: i, description: "something something card #{i + 1} something lorem ipsum something"})
+  Card.create({ title: "hey, I'm card #{i + 1}", list_id: list.id, ord: i, description: "something something card #{i + 1} something lorem ipsum"})
+end
+card = list.cards.first
+4.times do |i|
+  Item.create({ title: "whats up im item #{i + 1}", completed: i.even? ? 0 : 1, card_id: card.id });
 end

@@ -3,8 +3,10 @@ Trello.Collections.Cards = Backbone.Collection.extend({
 
   model: Trello.Models.Card,
 
-  initialize: function(model, options) {
-    this.list = options.list;
+  initialize: function(models, options) {
+    if (options && options.list) {
+      this.list = options.list;
+    }
   },
 
   getOrFetch: function(id) {
