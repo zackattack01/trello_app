@@ -2,6 +2,7 @@ Trello.Views.List = Backbone.CompositeView.extend({
   template: JST['lists/list'],
 
   initialize: function() {
+    this.$el.sortable();
     this.listenTo(this.model, 'sync add', this.render);
     this.listenTo(this.model.cards(), 'add', this.addCardView);
     this.listenTo(this.model.cards(), 'remove', this.removeCardView);

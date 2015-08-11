@@ -1,6 +1,7 @@
 class Api::BoardsController < ApplicationController
   def create
     @board = Board.new(board_params)
+    @board.user_id = current_user.id
     if @board.save
       render "show"
     else
@@ -36,6 +37,6 @@ class Api::BoardsController < ApplicationController
 
   protected
   def board_params
-    params.require(:board).permit(:title, :user_id)
+    params.require(:board).permit(:title)
   end
 end

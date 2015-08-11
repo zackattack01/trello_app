@@ -19,10 +19,17 @@ Trello.Views.Board = Backbone.CompositeView.extend({
     var content = this.template({ board: this.model });
     this.$el.html(content);
     this.attachSubviews();
+    this.onRender();
     return this;
+  },
+
+  onRender: function() {
+    this.$('.lists').sortable();
+    this.$('div.ui-sortable-handle').addClass("clearfix");
+    Backbone.CompositeView.prototype.onRender.call(this);
   },
 
   removeListView: function(list) {
     this.removeModelSubview('.lists', list);
-  },
+  }
 });

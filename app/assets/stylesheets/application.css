@@ -1,22 +1,44 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video { margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}body { line-height: 1; }ol, ul {list-style: none;}blockquote, q {quotes: none;}blockquote:before, blockquote:after,q:before, q:after {content: '';content: none;}table {border-collapse: collapse;border-spacing: 0;}
+
 @font-face {
   font-family: Oswald;
   src: url(Oswald-Light.ttf);
 }
 
 body {
-  margin: 0 auto;
-  height: inherit;
-  width: inherit;
   font-family: 'Oswald', sans-serif;
   letter-spacing: 1px;
   position: relative;
 }
 
+a {
+  text-decoration: none;
+  color: #0500BB;
+  font-size: 1.5em;
+}
+
+a:hover {
+  color: white;
+  text-shadow: 0 0 10px #0500BB;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2em;
+  margin: 10px;
+}
+
 #boards-index {
   float: left;
+  margin-left: 15px;
   width: 15%;
   display: inline-block;
 }
+
 
 #boards-index a {
   padding: 15px;
@@ -25,14 +47,22 @@ body {
   border-right: thin solid #337ab7; 
 }
 
-.clearfix {
+.clearfix:after {
   content: "";
   clear: both;
+  display: block;
+}
+
+#new-board {
+  width: 200px;
+  float: left;
+  margin-left: 20px;
 }
 
 #content-main {
   width: 80%;
   margin-left: 15%;
+  position: relative;
 }
 
 .list-item {
@@ -42,7 +72,12 @@ body {
   border: thin solid black;
   cursor: pointer;
   border-radius: 5px;
-  max-width: 20%;
+  width: 200px;
+}
+
+.lists {
+  float: left;
+  position: relative;
 }
 
 .auth {
@@ -55,9 +90,36 @@ h1, h3 {
   margin: 20px;
 }
 
-.logout-btn {
+.logout-btn input {
   text-align: center;
   position: fixed;
   left: 48%;
   bottom: 5%;
+  padding: 10px;
+  -webkit-appearance: none;
+  border: thin solid black;
+  cursor: pointer;
+  background: -webkit-linear-gradient(#F4CACA, #C5C5D7); 
+  background: -o-linear-gradient(#EAE9FF, #C5C5D7); 
+  background: -moz-linear-gradient(#EAE9FF, #C5C5D7); 
+  background: linear-gradient(#EAE9FF, #C5C5D7); 
+}
+
+button.submit {
+  text-align: center;
+  padding: 10px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20px;
+  -webkit-appearance: none;
+  border: thin solid black;
+  cursor: pointer;
+  background: -webkit-linear-gradient(#F4CACA, #C5C5D7); 
+  background: -o-linear-gradient(#EAE9FF, #C5C5D7); 
+  background: -moz-linear-gradient(#EAE9FF, #C5C5D7); 
+  background: linear-gradient(#EAE9FF, #C5C5D7); 
+}
+
+.logout-btn input:hover , button.submit:hover {
+  box-shadow: 0 0 10px black;
 }

@@ -10,8 +10,9 @@ window.Trello = {
     var boardsView = new Trello.Views.BoardIndex({ collection: boards });
     $boards.html(boardsView.render().$el);
     $rootEl = $('#content-main');
+    $newBoardForm = $('#new-board');
 
-    new Trello.Routers.BoardRouter(boards, $rootEl);
+    new Trello.Routers.BoardRouter(boards, $rootEl, $newBoardForm);
     Backbone.history.start();
   }
 };
